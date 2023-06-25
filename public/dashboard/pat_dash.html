@@ -1,0 +1,375 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Dashboard</title>
+  <style>
+    /* CSS styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      padding: 10px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .user-dropdown {
+      position: relative;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .user-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      min-width: 120px;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    select,
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .submit-btn {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1>Medical Dashboard</h1>
+    </div>
+    <div class="user-dropdown">
+      <button class="user-btn">&#x2630;</button>
+      <div class="dropdown-content">
+        <a href="#">Edit Info</a>
+        <a href="#">Log Out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Book an Appointment</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Patient Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+      <div class="form-group">
+        <label for="department">Department</label>
+        <select id="department" name="department" required>
+          <option value="" disabled selected>Select Department</option>
+          <option value="department1">Department 1</option>
+          <option value="department2">Department 2</option>
+          <option value="department3">Department 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="doctor">Doctor</label>
+        <select id="doctor" name="doctor" required>
+          <option value="" disabled selected>Select Doctor</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Book Appointment</button>
+      </div>
+    </form>
+  </div>
+
+  
+    <script>
+    // JavaScript code
+    document.querySelector('.user-btn').addEventListener('click', function () {
+      document.querySelector('.dropdown-content').classList.toggle('show');
+    });
+
+    // Toggle mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      document.querySelector('header').classList.toggle('mobile-menu');
+    });
+
+    // Close mobile menu on outside click
+    window.onclick = function (event) {
+      if (!event.target.matches('.user-btn')) {
+        var dropdowns = document.getElementsByClassName('dropdown-content');
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+      if (!event.target.matches('.menu-toggle')) {
+        var header = document.querySelector('header');
+        if (header.classList.contains('mobile-menu')) {
+          header.classList.remove('mobile-menu');
+        }
+      }
+    };
+</script>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* CSS Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* User Button Styles */
+    .user-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .user-button i {
+      font-size: 24px;
+      color: #000;
+    }
+
+    /* User Dropdown Styles */
+    .user-dropdown {
+      position: absolute;
+      top: 40px;
+      right: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: none;
+      z-index: 1;
+    }
+
+    .user-dropdown.show {
+      display: block;
+    }
+
+    .user-dropdown a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23000000'%3E%3Cpath d='M6.399 7.314L16 16.913l9.6-9.6L28.914 9.6l-12 12-12-12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 12px;
+      padding-right: 30px;
+    }
+
+    .form-group .calendar-icon {
+      position: relative;
+    }
+
+    .form-group .calendar-icon:before {
+      content: '\f073';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ccc;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Medical Dashboard</h1>
+    <button class="user-button">
+      <i class="fas fa-user"></i>
+    </button>
+    <div class="user-dropdown">
+      <a href="#">Edit Info</a>
+      <a href="#">Log Out</a>
+    </div>
+  </header>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="name">Patient Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="Enter your city">
+      </div>
+      <div class="form-group">
+        <label for="department">Department</label>
+        <select id="department" name="department">
+          <option value="">Select department</option>
+          <option value="cardiology">Cardiology</option>
+          <option value="neurology">Neurology</option>
+          <option value="orthopedics">Orthopedics</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="doctor">Doctor</label>
+        <select id="doctor" name="doctor">
+          <option value="">Select doctor</option>
+          <!-- Option values will be populated dynamically based on selected department -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <div class="calendar-icon">
+          <input type="text" id="date" name="date" placeholder="Select a date" readonly>
+        </div>
+      </div>
+      <button class="submit-btn" type="submit">Book Appointment</button>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <script>
+    // JavaScript code for dynamic doctor options and calendar functionality
+    // Add your JavaScript code here
+  </script>
+</body>
+</html>

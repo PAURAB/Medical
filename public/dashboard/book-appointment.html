@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Medical Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'><path d='M4 5L0.4 0.5H7.6L4 5Z' fill='black' /></svg>");
+      background-repeat: no-repeat;
+      background-position: right 10px top 50%;
+      background-size: 8px 5px;
+      padding-right: 30px;
+    }
+
+    .form-group input[type="text"]::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Medical Dashboard</h1>
+    <form action="/login" method="POST">
+      <div class="form-group">
+        <label for="name">Patient Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <select id="department" name="department">
+          <option value="cardiology">Cardiology</option>
+          <option value="dermatology">Dermatology</option>
+          <option value="neurology">Neurology</option>
+          <option value="orthopedics">Orthopedics</option>
+          <!-- Add more options for other departments -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="doctor">Doctor:</label>
+        <select id="doctor" name="doctor">
+          <option value="doctor1">Doctor 1</option>
+          <option value="doctor2">Doctor 2</option>
+          <option value="doctor3">Doctor 3</option>
+          <option value="doctor4">Doctor 4</option>
+          <!-- Add more options for other doctors in the selected department -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" required readonly>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Book Appointment">
+      </div>
+    </form>
+    <p>Already have an account? <a href="#">Click here to log in</a></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- <script>
+    flatpickr("#date", {
+      enableTime: false,
+      dateFormat: "Y-m-d"
+    });
+  </script> -->
+  <script>
+    // JavaScript code
+    document.querySelector('.user-btn').addEventListener('click', function () {
+      document.querySelector('.dropdown-content').classList.toggle('show');
+    });
+
+    // Toggle mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      document.querySelector('header').classList.toggle('mobile-menu');
+    });
+  </script>
+</body>
+
+</html>
